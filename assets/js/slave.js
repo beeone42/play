@@ -1,6 +1,6 @@
 
 var api_base = "https://www.googleapis.com/youtube/v3";
-var key = 'AIzaSyBviXxqFhZqBGocPSTYgluczLNHZvU3rGQ';
+var key = 'AIzaSyAV9VJ4g9Mq0BXGjgpHTkWBMfBOwY3oXsY';
 var ID = location.toString().split("#", 2)[1];
 var pl_index = -1;
 var pl_list = new Array();

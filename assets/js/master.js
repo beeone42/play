@@ -37,10 +37,8 @@ function onPlayerReady(event) {
 }
 
 function onPlayerStateChange(event) {
-
     pl_index = event.target.getPlaylistIndex();
     $("#log").text("state: " + event.data + " / pl_index: " + pl_index );
-
 }
 
 function stopVideo() {
@@ -52,9 +50,9 @@ function load_playlist(pl, id)
 {
     d = new Date();
     pl_list.length = 0;
-    $.getJSON("ajax/getplaylist.php", { id: id, t: d.getTime() } ).done(function(data){
-	for (tmp in data) {
-	    pl_list.push(data[tmp].id);
+    $.getJSON("/ajax/playlist/get/", { id: id, t: d.getTime() } ).done(function(data){
+	for (tmp in data.Items) {
+	    pl_list.push(data.Items[tmp].Id);
 	}
 	pl.loadPlaylist(pl_list);
     });
